@@ -1,21 +1,21 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * _memcpy - copies information between void pointers.
  * @newptr: destination pointer.
  * @ptr: source pointer.
  * @size: size of the new pointer.
- *
  * Return: no return.
  */
+
 void _memcpy(void *newptr, const void *ptr, unsigned int size)
 {
-	char *char_ptr = (char *)ptr;
-	char *char_newptr = (char *)newptr;
+	char *ptr_char = (char *)ptr;
+	char *fresh_char_ptr = (char *)newptr;
 	unsigned int i;
 
 	for (i = 0; i < size; i++)
-		char_newptr[i] = char_ptr[i];
+		fresh_char_ptr[i] = ptr_char[i];
 }
 
 /**
@@ -23,11 +23,11 @@ void _memcpy(void *newptr, const void *ptr, unsigned int size)
  * @ptr: pointer to the memory previously allocated.
  * @old_size: size, in bytes, of the allocated space of ptr.
  * @new_size: new size, in bytes, of the new memory block.
- *
  * Return: ptr.
  * if new_size == old_size, returns ptr without changes.
  * if malloc fails, returns NULL.
  */
+
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *newptr;

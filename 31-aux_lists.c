@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * add_sep_node_end - adds a separator found at the end
@@ -9,25 +9,25 @@
  */
 sep_list *add_sep_node_end(sep_list **head, char sep)
 {
-	sep_list *new, *temp;
+	sep_list *fresh, *stored;
 
-	new = malloc(sizeof(sep_list));
-	if (new == NULL)
+	fresh = malloc(sizeof(sep_list));
+	if (fresh == NULL)
 		return (NULL);
 
-	new->separator = sep;
-	new->next = NULL;
-	temp = *head;
+	fresh->separator = sep;
+	fresh->next = NULL;
+	stored = *head;
 
-	if (temp == NULL)
+	if (stored == NULL)
 	{
-		*head = new;
+		*head = fresh;
 	}
 	else
 	{
-		while (temp->next != NULL)
-			temp = temp->next;
-		temp->next = new;
+		while (stored->next != NULL)
+			stored = stored->next;
+		stored->next = fresh;
 	}
 
 	return (*head);
@@ -40,16 +40,16 @@ sep_list *add_sep_node_end(sep_list **head, char sep)
  */
 void free_sep_list(sep_list **head)
 {
-	sep_list *temp;
+	sep_list *stored;
 	sep_list *curr;
 
 	if (head != NULL)
 	{
 		curr = *head;
-		while ((temp = curr) != NULL)
+		while ((stored = curr) != NULL)
 		{
 			curr = curr->next;
-			free(temp);
+			free(stored);
 		}
 		*head = NULL;
 	}
@@ -64,25 +64,25 @@ void free_sep_list(sep_list **head)
  */
 line_list *add_line_node_end(line_list **head, char *line)
 {
-	line_list *new, *temp;
+	line_list *fresh, *stored;
 
-	new = malloc(sizeof(line_list));
-	if (new == NULL)
+	fresh = malloc(sizeof(line_list));
+	if (fresh == NULL)
 		return (NULL);
 
-	new->line = line;
-	new->next = NULL;
-	temp = *head;
+	fresh->line = line;
+	fresh->next = NULL;
+	stored = *head;
 
-	if (temp == NULL)
+	if (stored == NULL)
 	{
-		*head = new;
+		*head = fresh;
 	}
 	else
 	{
-		while (temp->next != NULL)
-			temp = temp->next;
-		temp->next = new;
+		while (stored->next != NULL)
+			stored = stored->next;
+		stored->next = fresh;
 	}
 
 	return (*head);
@@ -95,16 +95,16 @@ line_list *add_line_node_end(line_list **head, char *line)
  */
 void free_line_list(line_list **head)
 {
-	line_list *temp;
+	line_list *stored;
 	line_list *curr;
 
 	if (head != NULL)
 	{
 		curr = *head;
-		while ((temp = curr) != NULL)
+		while ((stored = curr) != NULL)
 		{
 			curr = curr->next;
-			free(temp);
+			free(stored);
 		}
 		*head = NULL;
 	}

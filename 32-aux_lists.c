@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * add_rvar_node - adds a variable at the end
@@ -9,30 +9,31 @@
  * @lval: length of the value.
  * Return: address of the head.
  */
+
 r_var *add_rvar_node(r_var **head, int lvar, char *val, int lval)
 {
-	r_var *new, *temp;
+	r_var *fresh, *temp;
 
-	new = malloc(sizeof(r_var));
-	if (new == NULL)
+	fresh = malloc(sizeof(r_var));
+	if (fresh == NULL)
 		return (NULL);
 
-	new->len_var = lvar;
-	new->val = val;
-	new->len_val = lval;
+	fresh->len_var = lvar;
+	fresh->val = val;
+	fresh->len_val = lval;
 
-	new->next = NULL;
+	fresh->next = NULL;
 	temp = *head;
 
 	if (temp == NULL)
 	{
-		*head = new;
+		*head = fresh;
 	}
 	else
 	{
 		while (temp->next != NULL)
 			temp = temp->next;
-		temp->next = new;
+		temp->next = fresh;
 	}
 
 	return (*head);

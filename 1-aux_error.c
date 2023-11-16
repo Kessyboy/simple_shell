@@ -1,17 +1,17 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * strcat_cd - function that concatenates the message for cd error
- *
  * @datash: data relevant (directory)
  * @msg: message to print
  * @error: output message
  * @ver_str: counter lines
  * Return: error message
  */
+
 char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 {
-	char *illegal_flag;
+	char *flag_wrong;
 
 	_strcpy(error, datash->av[0]);
 	_strcat(error, ": ");
@@ -21,12 +21,12 @@ char *strcat_cd(data_shell *datash, char *msg, char *error, char *ver_str)
 	_strcat(error, msg);
 	if (datash->args[1][0] == '-')
 	{
-		illegal_flag = malloc(3);
-		illegal_flag[0] = '-';
-		illegal_flag[1] = datash->args[1][1];
-		illegal_flag[2] = '\0';
-		_strcat(error, illegal_flag);
-		free(illegal_flag);
+		flag_wrong = malloc(3);
+		flag_wrong[0] = '-';
+		flag_wrong[1] = datash->args[1][1];
+		flag_wrong[2] = '\0';
+		_strcat(error, flag_wrong);
+		free(flag_wrong);
 	}
 	else
 	{
