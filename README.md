@@ -1,6 +1,3 @@
-
-Sure, here's a rephrased version:
-
 Project Title: ALX Shell Project by Kesiena and Tomilola
 
 Overview:
