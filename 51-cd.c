@@ -2,37 +2,37 @@
 
 /**
  * cd_shell - changes current directory
- *
  * @datash: data relevant
  * Return: 1 on success
  */
+
 int cd_shell(data_shell *datash)
 {
-	char *dir;
+	char *path_c;
 	int ishome, ishome2, isddash;
 
-	dir = datash->args[1];
+	path_c = datash->args[1];
 
-	if (dir != NULL)
+	if (path_c != NULL)
 	{
-		ishome = _strcmp("$HOME", dir);
-		ishome2 = _strcmp("~", dir);
-		isddash = _strcmp("--", dir);
+		ishome = _strcmp("$HOME", path_c);
+		ishome2 = _strcmp("~", path_c);
+		isddash = _strcmp("--", path_c);
 	}
 
-	if (dir == NULL || !ishome || !ishome2 || !isddash)
+	if (path_c == NULL || !ishome || !ishome2 || !isddash)
 	{
 		cd_to_home(datash);
 		return (1);
 	}
 
-	if (_strcmp("-", dir) == 0)
+	if (_strcmp("-", path_c) == 0)
 	{
 		cd_previous(datash);
 		return (1);
 	}
 
-	if (_strcmp(".", dir) == 0 || _strcmp("..", dir) == 0)
+	if (_strcmp(".", path_c) == 0 || _strcmp("..", path_c) == 0)
 	{
 		cd_dot(datash);
 		return (1);

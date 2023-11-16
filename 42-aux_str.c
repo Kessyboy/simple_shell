@@ -5,17 +5,18 @@
  * @s: Type char pointer str
  * Return: duplicated str
  */
+
 char *_strdup(const char *s)
 {
-	char *new;
-	size_t len;
+	char *fresh;
+	size_t count;
 
-	len = _strlen(s);
-	new = malloc(sizeof(char) * (len + 1));
-	if (new == NULL)
+	count = _strlen(s);
+	fresh = malloc(sizeof(char) * (count + 1));
+	if (fresh == NULL)
 		return (NULL);
-	_memcpy(new, s, len + 1);
-	return (new);
+	_memcpy(fresh, s, count + 1);
+	return (fresh);
 }
 
 /**
@@ -25,12 +26,12 @@ char *_strdup(const char *s)
  */
 int _strlen(const char *s)
 {
-	int len;
+	int count;
 
-	for (len = 0; s[len] != 0; len++)
+	for (count = 0; s[count] != 0; count++)
 	{
 	}
-	return (len);
+	return (count);
 }
 
 /**
@@ -42,20 +43,20 @@ int _strlen(const char *s)
  */
 int cmp_chars(char str[], const char *delim)
 {
-	unsigned int i, j, k;
+	unsigned int counter, index, deter;
 
-	for (i = 0, k = 0; str[i]; i++)
+	for (counter = 0, deter = 0; str[counter]; counter++)
 	{
-		for (j = 0; delim[j]; j++)
+		for (index = 0; delim[index]; index++)
 		{
-			if (str[i] == delim[j])
+			if (str[counter] == delim[index])
 			{
-				k++;
+				deter++;
 				break;
 			}
 		}
 	}
-	if (i == k)
+	if (counter == deter)
 		return (1);
 	return (0);
 }
@@ -71,15 +72,15 @@ char *_strtok(char str[], const char *delim)
 {
 	static char *splitted, *str_end;
 	char *str_start;
-	unsigned int i, bool;
+	unsigned int counter, bool;
 
 	if (str != NULL)
 	{
 		if (cmp_chars(str, delim))
 			return (NULL);
 		splitted = str; /*Store first address*/
-		i = _strlen(str);
-		str_end = &str[i]; /*Store last address*/
+		counter = _strlen(str);
+		str_end = &str[counter]; /*Store last address*/
 	}
 	str_start = splitted;
 	if (str_start == str_end) /*Reaching the end*/
@@ -92,9 +93,9 @@ char *_strtok(char str[], const char *delim)
 			if (*splitted && *(splitted - 1) == '\0')
 				break;
 		/*Replacing delimiter for null char*/
-		for (i = 0; delim[i]; i++)
+		for (counter = 0; delim[counter]; counter++)
 		{
-			if (*splitted == delim[i])
+			if (*splitted == delim[counter])
 			{
 				*splitted = '\0';
 				if (splitted == str_start)
@@ -118,11 +119,11 @@ char *_strtok(char str[], const char *delim)
  */
 int _isdigit(const char *s)
 {
-	unsigned int i;
+	unsigned int counter;
 
-	for (i = 0; s[i]; i++)
+	for (counter = 0; s[counter]; counter++)
 	{
-		if (s[i] < 48 || s[i] > 57)
+		if (s[counter] < 48 || s[counter] > 57)
 			return (0);
 	}
 	return (1);
