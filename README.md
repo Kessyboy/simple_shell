@@ -1,49 +1,29 @@
+Project Title: ALX Shell Project by Kesiena and Tomilola
 
+Overview:
+This project involves the creation of a UNIX command interpreter resembling the functionalities of the simple shell (sh). It encompasses additional functions beyond the basic shell operations. The entire program was developed using the C language and stands as a significant milestone project within the ALX Africa Software Engineering curriculum.
 
-# Nwabueze Franklin & Asiwaju Ifeoluwa
+Installation:
+To integrate this project into your working environment, clone the repository into your directory. For optimal performance, compile the files using GCC along with specific flags: -Wall -Wextra -Werror -pedantic -std=gnu89
 
-![alt text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
+How to Use:
+Once compiled, the resulting program operates autonomously, supporting both interactive and non-interactive modes.
 
-### Description
+Interactive Mode:
+In interactive mode, execute the program and await the appearance of the prompt. Subsequently, input commands directly. Terminate the session using either the "exit" command or by pressing ctrl-D.
 
-A simple UNIX command interpreter that replicates functionalities of the simple shell (sh). Additional functions are also included. This program was written entirely in C as a milestone project for ALX Africa Software Engineering.
+Non-Interactive Mode:
+For non-interactive mode, echo the desired command and pipe it into the program using the following syntax:
 
-### Installation
-
-Clone this repository into your working directory. For best results, files should be compiled with GCC and the following flags: -Wall -Wextra -Werror -pedantic -std=gnu89
-
-### Usage
-
-After compilation, the resulting program can run stand-alone, either in interactive or non-interactive mode.
-
-#### Interactive Mode
-
-In interactive mode, simply run the program and wait for the prompt to appear. From there, you can type commands freely, exiting with either the "exit" command or ctrl-D.
-
-#### Non-Interactive Mode
-
-In non-interactive mode, echo your desired command and pipe it into the program like this:
-
-```sh
+bash
+Copy code
 echo "ls" | ./shell
-```
+In non-interactive mode, upon executing your desired command(s), the program will exit.
 
-In non-interactive mode, the program will exit after finishing your desired command(s).
-
-#### Included Built-Ins
-
-Our shell has support for the following built-in commands:
-
-| Command             | Definition                                                                                |
-| ------------------- | ----------------------------------------------------------------------------------------- |
-| exit [n]            | Exit the shell, with an optional exit status, n.                                          |
-| env                 | Print the environment.                                                                    |
-| setenv [var][value] | Set an environment variable and value. If the variable exists, the value will be updated. |
-| unsetenv [var]      | Remove an environment variable.                                                           |
-| cd [dir]            | Change the directory.                                                                     |
-| help [built-in]     | Read documentation for a built-in.                                                        |
+Included Features:
+The shell incorporates support for several built-in commands, including:
 
 
-### Credits
 
-All code written by [Nwabueze Franklin](https://github.com/NwabuezeFranklin) and [Asiwaju Ifeoluwa](https://github.com/Asiwajuife).
+
+
