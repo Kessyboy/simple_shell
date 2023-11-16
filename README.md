@@ -1,8 +1,4 @@
-
-
-# Nwabueze Franklin & Asiwaju Ifeoluwa
-
-![alt text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
+a simple shell project on ALX carried out by Kesiena and Tomilola
 
 ### Description
 
@@ -46,4 +42,4 @@ Our shell has support for the following built-in commands:
 
 ### Credits
 
-All code written by [Nwabueze Franklin](https://github.com/NwabuezeFranklin) and [Asiwaju Ifeoluwa](https://github.com/Asiwajuife).
+All code written by (https://github.com/Tomilola-ng and https://github.com/Kessyboy)
